@@ -33,14 +33,14 @@ public class Login {
     }
     }
   
-    public string registerUser() {
+    public String registerUser() {
         
     }
     public static boolean LoginUser() {
         
     }
     
-    public static boolean returnLogicStatus() { //string returnLoginStatus ??
+    public String returnLogicStatus() { //string returnLoginStatus ??
         
         if(CheckUsername(username) && CheckPAsswordComplexity(password) == true ) {
             JOptionPane.showMessageDialog(null, "Welcome " + firstname + lastname + " it is great to see you again.");
