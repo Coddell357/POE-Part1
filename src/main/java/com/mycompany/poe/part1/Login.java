@@ -39,7 +39,7 @@ public class Login {
         }
     }
     
-    public static boolean LoginUser() { //google equals method & call in  parameters
+    public static boolean LoginUser(username, password) { //google equals method & call in  parameters
         if ( password.equals(registerUser())) {
             return true;
         }else {
@@ -48,7 +48,7 @@ public class Login {
         
     }
     
-    public String returnLoginStatus() { //string returnLoginStatus ??
+    public String returnLoginStatus() { 
         
         if( LoginUser() ) { // login user call
            return true; 

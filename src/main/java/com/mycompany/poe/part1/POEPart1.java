@@ -40,6 +40,11 @@ public class POEPart1 {
         
         password = JOptionPane.showInputDialog(null, "Enter your password");
         
+        lg.registerUser();
+        
+        lg.returnLoginStatus();
+        
+        lg.returnLoginStatus()
         
         JOptionPane.showMessageDialog(null, "Welcome " + firstname + lastname + 
         " it is great to see you again.");
