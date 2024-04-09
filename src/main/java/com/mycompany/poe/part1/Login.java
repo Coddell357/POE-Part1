@@ -12,40 +12,37 @@ import javax.swing.JOptionPane;
  */
 public class Login {
     
-    public static boolean CheckUsername(String username) {
+    public static boolean CheckUsername(String username) { 
         
-        return username.length()<=5 && username.contains("_"); 
-        
-        if ( username != null && CheckUsername(username) == true) {
-           JOptionPane.showMessageDialog(null, "Username succesfully captured");
-        }else
-            JOptionPane.showMessageDialog(null, "Username is not correctly formatted,please ensure that your username contains an underscore and is no more than 5 characters in length.");
+        if ( username != null && username.length()<=5 && username.contains("_") ) {
+          return true;
+        }else{
+           return false; 
+    }
     }
     
     public static boolean CheckPasswordComplexity(String password) {
         
-        return password.length()>=8 && password.matches("a-z") && password.matches("A-Z") && password.matches("@#$%^*()-&+=");
-      
-    if ( password != null && CheckPasswordComplexity(password) == true) { //(password.length()>= 8 && password.matches("a-z") && password.matches("A-Z") && password.contains("_") && password.matches("@#$%^*()-&+=")) {
-       JOptionPane.showMessageDialog(null, "Password succesfully captured");
+      if ( password != null && password.length()>=8 && password.matches("a-z") && password.matches("A-Z") && password.matches("@#$%^*()-&+=") ) { 
+       return true;
     }else {
-        JOptionPane.showMessageDialog(null, "Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number and a special ");
+       return false; 
     }
     }
   
-    public String registerUser() {
+    public String registerUser() { //chech if and else use their methods from password and username
         
     }
-    public static boolean LoginUser() {
+    public static boolean LoginUser() { //google equals method call in  parameters
         
     }
     
-    public String returnLogicStatus() { //string returnLoginStatus ??
+    public String returnLoginStatus() { //string returnLoginStatus ??
         
-        if(CheckUsername(username) && CheckPAsswordComplexity(password) == true ) {
-            JOptionPane.showMessageDialog(null, "Welcome " + firstname + lastname + " it is great to see you again.");
+        if( LoginUser() ) { // login user call
+           return true; 
         }else {
-            JOptionPane.showMessageDialog(null, "Username or password incorrect, please try again.");
+            return false;
         }
             
         
