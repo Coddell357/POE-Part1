@@ -4,7 +4,7 @@
  */
 package com.mycompany.poe.part1;
 
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -18,20 +18,25 @@ public class Login {
           return true;
         }else{
            return false; 
-    }
+        }
     }
     
     public static boolean CheckPasswordComplexity(String password) {
         
-      if ( password != null && password.length()>=8 && password.matches("a-z") && password.matches("A-Z") && password.matches("@#$%^*()-&+=") ) { 
-       return true;
-    }else {
-       return false; 
-    }
+        if ( password != null && password.length()>=8 && password.matches("a-z") && password.matches("A-Z") && password.matches("@#$%^*()-&+=") ) { 
+           return true;
+        }else {
+           return false; 
+        }
     }
   
     public String registerUser() { //chech if and else use their methods from password and username
         
+        if () {
+            return true;
+        }else {
+            return false;
+        }
     }
     
     public static boolean LoginUser() { //google equals method & call in  parameters
@@ -49,7 +54,9 @@ public class Login {
            return true; 
         }else {
             return false;
-//        }
+        }
+        
+    }
             
         
     }
@@ -57,5 +64,4 @@ public class Login {
     
     
                 
-    
-}
+  
