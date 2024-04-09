@@ -33,7 +33,13 @@ public class Login {
     public String registerUser() { //chech if and else use their methods from password and username
         
     }
-    public static boolean LoginUser() { //google equals method call in  parameters
+    
+    public static boolean LoginUser() { //google equals method & call in  parameters
+        if ( password.equals(registerUser())) {
+            return true;
+        }else {
+            return false;
+        }
         
     }
     
@@ -43,7 +49,7 @@ public class Login {
            return true; 
         }else {
             return false;
-        }
+//        }
             
         
     }

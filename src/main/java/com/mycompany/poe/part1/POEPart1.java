@@ -20,18 +20,25 @@ public class POEPart1 {
         
         Login lg = new Login();
         
+        firstname = JOptionPane.showInputDialog(null, "Enter your firstname");
+        
+        lastname = JOptionPane.showInputDialog(null, "Enter your lastname");
+        
         username = JOptionPane.showInputDialog(null, "Enter your username");
         lg.CheckUsername(username);
-        JOptionPane.showMessageDialog(null,"Username is incorrect");
+        
+        JOptionPane.showMessageDialog(null,"Username successfully captured");
+        JOptionPane.showMessageDialog(null, "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.");
+        
         username = JOptionPane.showInputDialog(null, "Enter username");
         
         password = JOptionPane.showInputDialog(null, "Enter your password");
         lg.CheckPasswordComplexity(password);
         
+        JOptionPane.showMessageDialog(null, "Password successfully captured");
+        JOptionPane.showMessageDialog(null, "Password is not correctly formatted, please ensure that the passowrd contains at least 8 characters, a capital letter, a number and a special character.");
         
-        firstname = JOptionPane.showInputDialog(null, "Enter your firstname");
-        
-        lastname = JOptionPane.showInputDialog(null, "Enter your lastname");
+        password = JOptionPane.showInputDialog(null, "Enter your password");
         
         
         JOptionPane.showMessageDialog(null, "Welcome " + firstname + lastname + 
