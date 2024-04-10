@@ -67,7 +67,7 @@ public class POEPart1 {
         lg.LoginUser(username, password);
         
         if(lg.LoginUser(username, password) == true) {
-            JOptionPane.showMessageDialog();
+            JOptionPane.showMessageDialog(null,"You have been successfully registered");
         }
         
         lg.returnLoginStatus();

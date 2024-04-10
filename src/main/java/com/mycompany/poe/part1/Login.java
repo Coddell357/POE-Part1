@@ -11,6 +11,8 @@ package com.mycompany.poe.part1;
  * @author lab_services_student
  */
 public class Login {
+    String username;
+    String password;
     
     public static boolean CheckUsername(String username) { 
         
