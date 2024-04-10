@@ -21,26 +21,26 @@ public class Login {
         }
     }
     
-    public static boolean CheckPasswordComplexity(String password) {
+    public static boolean CheckPasswordComplexity(String password) {  
         
-        if ( password != null && password.length()>=8 && password.matches("a-z") && password.matches("A-Z") && password.matches("@#$%^*()-&+=") ) { 
+        if ( password != null && password.length()>=8 && password.matches("[a-z]") && password.matches("[A-Z]") && password.matches("[@#$%^*()-&+=]") ) { 
            return true;
         }else {
            return false; 
         }
     }
   
-    public String registerUser() { //chech if and else use their methods from password and username
+    public String registerUser() { 
         
-        if () {
+        if (CheckUsername(username)==true && CheckPasswordComplexity(password)==true) {
             return true;
         }else {
             return false;
         }
     }
     
-    public static boolean LoginUser(username, password) { //google equals method & call in  parameters
-        if ( password.equals(registerUser())) {
+    public boolean LoginUser(String username, String password) { 
+        if ( password.equals(password) && username.equals(username)) {
             return true;
         }else {
             return false;
@@ -50,7 +50,7 @@ public class Login {
     
     public String returnLoginStatus() { 
         
-        if( LoginUser() ) { // login user call
+        if( LoginUser(username,password) == true ) {
            return true; 
         }else {
             return false;
