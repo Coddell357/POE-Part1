@@ -27,6 +27,7 @@ public class POEPart1 {
         username = JOptionPane.showInputDialog(null, "Enter your username");
         lg.CheckUsername(username);
         
+        //Username WhileLoop
         if( lg.CheckUsername(username)== true) {
             JOptionPane.showMessageDialog(null,"Username successfully captured");
         }else {
@@ -34,8 +35,8 @@ public class POEPart1 {
         }
         
         
-        //username = JOptionPane.showInputDialog(null, "Enter username"); in while loop
         
+        //Password WhileLoop
         password = JOptionPane.showInputDialog(null, "Enter your password");
         lg.CheckPasswordComplexity(password);
         
@@ -45,25 +46,40 @@ public class POEPart1 {
         JOptionPane.showMessageDialog(null, "Password is not correctly formatted, please ensure that the passowrd contains at least 8 characters, a capital letter, a number and a special character.");
         }
         
-        //password = JOptionPane.showInputDialog(null, "Enter your password");
         
-        lg.registerUser();
         
-        String username = true;
-        String username =(JOptionPane.showInputDialog(null,"Enter your username" ));
-        while(username)
+        
+        boolean usernameValid = false;
+        username =(JOptionPane.showInputDialog(null,"Enter your username" ));
+        while(usernameValid)
         {
-            String strDisplay = "";
-            
-            if( username != CheckUsername(username))
+             if( ! lg.CheckUsername(username))
             {
                 JOptionPane.showMessageDialog(null,"Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.");
             }  
             else
             {
-                username = false;
+                usernameValid = true;
             }
         }
+        
+        
+        boolean passwordValid = false;
+        password =(JOptionPane.showInputDialog(null,"Enter your password" ));
+        while(passwordValid)
+        {
+             if( ! lg.CheckPasswordComplexity(password))
+            {
+                JOptionPane.showMessageDialog(null,"Password is not correctly formatted, please ensure taht the passsword contains at least 8 characters, a capital letter, a number and a special character");
+            }  
+            else
+            {
+                passwordValid = true;
+            }
+        }
+        
+        
+        lg.registerUser();
         
         lg.LoginUser(username, password);
         
@@ -73,7 +89,7 @@ public class POEPart1 {
         
         lg.returnLoginStatus();
         
-        if(lg.returnLoginStatus() == true) {
+        if(lg.returnLoginStatus().equals("Successfull login")) {
            JOptionPane.showMessageDialog(null, "Welcome " + firstname + lastname + 
         " it is great to see you again.");
         }else{

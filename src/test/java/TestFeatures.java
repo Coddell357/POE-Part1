@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
+import com.mycompany.poe.part1.Login;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,11 +17,15 @@ public class TestFeatures {
     public TestFeatures() {
     }
     
+     Login ln = new Login();
+     String username;
+     String password;
+    
     @Test
     void TestOne()
     {
      String strExpected = "kyl_1";
-     String strActual =   
+     String strActual = ln.CheckUsername(username);
              
     Assertions.assertEquals(strExpected, strActual);
           
@@ -30,7 +35,7 @@ public class TestFeatures {
     void TestTwo()
     {
      String strExpected = "Ch&&sec@ke99!";
-     String strActual =   
+     String strActual = ln.CheckPasswordComplexity(password);
     }
     
     @Test
@@ -41,6 +46,7 @@ public class TestFeatures {
       Assertions.assertEquals()
     }
     
+    //Testing assertTrue/False
     @Test
     void TestFour()
     {

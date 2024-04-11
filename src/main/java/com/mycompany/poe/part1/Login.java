@@ -11,10 +11,10 @@ package com.mycompany.poe.part1;
  * @author lab_services_student
  */
 public class Login {
-    //String username;
-    //String password;
+    public String username;
+    public String password;
     
-    public static boolean CheckUsername(String username) { 
+    public boolean CheckUsername(String username) { 
         
         if ( username != null && username.length()<=5 && username.contains("_") ) {
           return true;
@@ -23,9 +23,9 @@ public class Login {
         }
     }
     
-    public static boolean CheckPasswordComplexity(String password) {  
+    public boolean CheckPasswordComplexity(String password) {  
         
-        if ( password != null && password.length()>=8 && password.matches("[a-z]") && password.matches("[A-Z]") && password.matches("[@#$%^*()-&+=]") ) { 
+        if ( password != null && password.length()>=8 && password.matches(".*[a-z]*.") && password.matches(".*[0-9]*.") && password.matches(".*[A-Z]*.") && password.matches(".*[!@#$%^&*().*]") ) { 
            return true;
         }else {
            return false; 
@@ -34,11 +34,18 @@ public class Login {
   
     public String registerUser() { 
         
-        if (CheckUsername(username)==true && CheckPasswordComplexity(password)==true) {
-            return true;
-        }else {
-            return false;
+        if ( !CheckUsername(username) ) {
+            return "Username is incorrect" ;
         }
+            
+        
+        if ( !CheckPasswordComplexity(password) ) {
+            return "Password is incorrect";
+        } 
+        if (CheckUsername(username) && CheckPasswordComplexity(password)) {
+             return "You are now registered";
+        } return "not registered";
+            
     }
     
     public boolean LoginUser(String username, String password) { 
@@ -52,11 +59,11 @@ public class Login {
     
     public String returnLoginStatus() { 
         
-        //if( LoginUser.equals(LoginUser))
+        
         if( LoginUser(username,password) == true ) {
-           return true; 
+           return "Successfull login" ; 
         }else {
-            return false;
+            return "unseccessfully login";
         }
         
     }
