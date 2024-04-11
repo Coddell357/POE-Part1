@@ -50,10 +50,11 @@ public class POEPart1 {
         lg.registerUser();
         
         String username = true;
+        String username =(JOptionPane.showInputDialog(null,"Enter your username" ));
         while(username)
         {
             String strDisplay = "";
-            String username = String.parseString(JOptionPane.showInputDialog(null,"Enter your username" ));
+            
             if( username != CheckUsername(username))
             {
                 JOptionPane.showMessageDialog(null,"Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.");
