@@ -22,50 +22,63 @@ public class TestFeatures {
      String password;
     
     @Test
-    void TestOne()
+    public void TestCheckUsername()
     {
-     String strExpected = "kyl_1";
-     String strActual = ln.CheckUsername(username);
+        Login ln = new Login();
+        boolean Expected = true; //"kyl_1";
+        boolean Actual = ln.CheckUsername(username); //"kyle!!!!!!!";
              
-    Assertions.assertEquals(strExpected, strActual);
+        Assertions.assertEquals(Expected, Actual);
           
     }
     
     @Test
-    void TestTwo()
+    public void TestCheckPasswordComplexity()
     {
-     String strExpected = "Ch&&sec@ke99!";
-     String strActual = ln.CheckPasswordComplexity(password);
+        Login ln = new Login();
+        boolean Expected = true; //"Ch&&sec@ke99!";
+        boolean Actual = ln.CheckPasswordComplexity(password); //"password";
+        
+        Assertions.assertEquals(Expected, Actual);
     }
     
     @Test
-    void TestThree()
+    public void TestLoginSuccess()
     {
+        Login ln = new Login();
+        Expected = ;
+        Actual = ;
       
-        
-      Assertions.assertEquals()
+        Assertions.assertTrue(true, "");
     }
     
-    //Testing assertTrue/False
-    @Test
-    void TestFour()
-    {
-        
-      Assertions.assertTrue(true, "True");
-    }
     
     @Test
-    void TestFive()
+    public void TestUsernameFormat()
     {
+        Login ln = new Login();
+        Expected = ;
+        Actual = ;
         
-     Assertions.assertTrue(true, "True");
+        Assertions.assertTrue(true, "True");
     }
     
     @Test
-    void TestSix()
+    public void TestPasswordFormat()
     {
+        Login ln = new Login();
+        Expected = ;
+        Actual = ;
         
-        
+        Assertions.assertTrue(true, "True");
+    }
+    
+    @Test
+    public void Test()
+    {
+        Expected = ;
+        Actual = ;
+       
         Assertions.assertTrue(true, "True");
     }
 }

@@ -70,7 +70,7 @@ public class POEPart1 {
         {
              if( ! lg.CheckPasswordComplexity(password))
             {
-                JOptionPane.showMessageDialog(null,"Password is not correctly formatted, please ensure taht the passsword contains at least 8 characters, a capital letter, a number and a special character");
+                JOptionPane.showMessageDialog(null,"Password is not correctly formatted, please ensure that the passsword contains at least 8 characters, a capital letter, a number and a special character");
             }  
             else
             {
