@@ -20,14 +20,16 @@ public class POEPart1 {
         
         Login lg = new Login();
         
+        //prompt user for firstname input
         firstname = JOptionPane.showInputDialog(null, "Enter your firstname");
         
+        //prompt useer for input of firstname
         lastname = JOptionPane.showInputDialog(null, "Enter your lastname");
         
-        username = JOptionPane.showInputDialog(null, "Enter your username");
+         //prompted user for username input
+        username = JOptionPane.showInputDialog(null, "Enter your username"); 
         lg.CheckUsername(username);
         
-        //Username WhileLoop
         if( lg.CheckUsername(username)== true) {
             JOptionPane.showMessageDialog(null,"Username successfully captured");
         }else {
@@ -35,8 +37,7 @@ public class POEPart1 {
         }
         
         
-        
-        //Password WhileLoop
+        //prompted user for password input
         password = JOptionPane.showInputDialog(null, "Enter your password");
         lg.CheckPasswordComplexity(password);
         
@@ -48,7 +49,7 @@ public class POEPart1 {
         
         
         
-        
+        //Username While Loop
         boolean usernameValid = false;
         username =(JOptionPane.showInputDialog(null,"Enter your username" ));
         while(usernameValid)
@@ -63,7 +64,7 @@ public class POEPart1 {
             }
         }
         
-        
+        //Password WhileLoop
         boolean passwordValid = false;
         password =(JOptionPane.showInputDialog(null,"Enter your password" ));
         while(passwordValid)
@@ -81,13 +82,13 @@ public class POEPart1 {
         
         lg.registerUser();
         
-        lg.LoginUser(username, password);
+        
         
         if(lg.LoginUser(username, password) == true) {
-            JOptionPane.showMessageDialog(null,"You have been successfully registered");
+            JOptionPane.showMessageDialog(null,"You have been successfully logged in");
         }
         
-        lg.returnLoginStatus();
+       
         
         if(lg.returnLoginStatus().equals("Successfull login")) {
            JOptionPane.showMessageDialog(null, "Welcome " + firstname + lastname + 

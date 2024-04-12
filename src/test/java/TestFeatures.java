@@ -6,7 +6,6 @@
 import com.mycompany.poe.part1.Login;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
@@ -17,27 +16,45 @@ public class TestFeatures {
     public TestFeatures() {
     }
     
-     Login ln = new Login();
-     String username;
-     String password;
     
     @Test
-    public void TestCheckUsername()
+    public void TestCheckUsernameTrue()
     {
         Login ln = new Login();
-        boolean Expected = true; //"kyl_1";
-        boolean Actual = ln.CheckUsername(username); //"kyle!!!!!!!";
+        boolean Expected = true;
+        boolean Actual = ln.CheckUsername("kyl_1");
              
         Assertions.assertEquals(Expected, Actual);
           
     }
     
     @Test
-    public void TestCheckPasswordComplexity()
+    public void TestCheckUsernameFalse()
     {
         Login ln = new Login();
-        boolean Expected = true; //"Ch&&sec@ke99!";
-        boolean Actual = ln.CheckPasswordComplexity(password); //"password";
+        boolean Expected = false;
+        boolean Actual = ln.CheckUsername("kyle!!!!!!!"); 
+             
+        Assertions.assertEquals(Expected, Actual);
+          
+    }
+    
+    @Test
+    public void TestCheckPasswordComplexityTrue()
+    {
+        Login ln = new Login();
+        boolean Expected = true;
+        boolean Actual = ln.CheckPasswordComplexity("Ch&&sec@ke99!");
+        
+        Assertions.assertEquals(Expected, Actual);
+    }
+    
+     @Test
+    public void TestCheckPasswordComplexityFalse()
+    {
+        Login ln = new Login();
+        boolean Expected = false;
+        boolean Actual = ln.CheckPasswordComplexity("password");
         
         Assertions.assertEquals(Expected, Actual);
     }
@@ -46,39 +63,67 @@ public class TestFeatures {
     public void TestLoginSuccess()
     {
         Login ln = new Login();
-        Expected = ;
-        Actual = ;
+        ln.username = "kyl_1";
+        ln.password = "Ch&&sec@ke99!";
+     
+        boolean Actual = ln.LoginUser("kyl_1", "Ch&&sec@ke99!") ;
       
-        Assertions.assertTrue(true, "");
+        Assertions.assertTrue(Actual);
     }
     
     
     @Test
-    public void TestUsernameFormat()
+    public void TestLoginFail()
+    {
+        
+        Login ln = new Login();
+        ln.username = "kyl_1";
+        ln.password = "Ch&&sec@ke99!";
+                
+        boolean Actual = ln.LoginUser("kyle!!!!!!!", "password") ;
+      
+        Assertions.assertFalse(Actual);
+    }
+    
+    
+    @Test
+    public void TestUsernameCorrectFormat()
     {
         Login ln = new Login();
-        Expected = ;
-        Actual = ;
         
-        Assertions.assertTrue(true, "True");
+        boolean Actual = ln.CheckUsername("kyl_1") ;
+        
+        Assertions.assertTrue(Actual);
     }
     
+    //
     @Test
-    public void TestPasswordFormat()
+    public void TestUsernameWrongFormat()
     {
         Login ln = new Login();
-        Expected = ;
-        Actual = ;
-        
-        Assertions.assertTrue(true, "True");
-    }
-    
-    @Test
-    public void Test()
-    {
-        Expected = ;
-        Actual = ;
        
-        Assertions.assertTrue(true, "True");
+        boolean Actual = ln.CheckUsername("kyle!!!!!!!") ;
+        
+        Assertions.assertFalse(Actual);
+    }
+    
+    @Test
+    public void TestPasswordCorrectFormat()
+    {
+        Login ln = new Login();
+      
+        boolean Actual = ln.CheckPasswordComplexity("Ch&&sec@ke99!");
+        
+        Assertions.assertTrue(Actual);
+    }
+    
+    @Test
+    public void TestPasswordWrongFormat()
+    {
+        Login ln = new Login();
+       
+        boolean Actual = ln.CheckPasswordComplexity("password");
+       
+        Assertions.assertFalse(Actual);
     }
 }

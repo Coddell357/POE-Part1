@@ -15,16 +15,17 @@ public class Login {
     public String password;
     
     public boolean CheckUsername(String username) { 
-        
-        if ( username != null && username.length()<=5 && username.contains("_") ) {
+        this.username = username;
+        if ( username != null && username.length()<=5 && username.contains("_") ) {          
           return true;
         }else{
            return false; 
         }
+        
     }
     
     public boolean CheckPasswordComplexity(String password) {  
-        
+        this.password = password;
         if ( password != null && password.length()>=8 && password.matches(".*[a-z]*.") && password.matches(".*[0-9]*.") && password.matches(".*[A-Z]*.") && password.matches(".*[!@#$%^&*().*]") ) { 
            return true;
         }else {
@@ -44,12 +45,12 @@ public class Login {
         } 
         if (CheckUsername(username) && CheckPasswordComplexity(password)) {
              return "You are now registered";
-        } return "not registered";
+        } return " You are not registered";
             
     }
     
     public boolean LoginUser(String username, String password) { 
-        if ( password.equals(password) && username.equals(username)) {
+        if ( this.password.equals(password) && this.username.equals(username)) {
             return true;
         }else {
             return false;
