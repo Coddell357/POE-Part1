@@ -51,9 +51,9 @@ public class POEPart1 {
         
         //Username While Loop
         boolean usernameValid = false;
-        username =(JOptionPane.showInputDialog(null,"Enter your username" ));
-        while(usernameValid)
-        {
+        while(!usernameValid)
+        { username =(JOptionPane.showInputDialog(null,"Enter your username" ));
+        
              if( ! lg.CheckUsername(username))
             {
                 JOptionPane.showMessageDialog(null,"Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.");
@@ -66,9 +66,8 @@ public class POEPart1 {
         
         //Password WhileLoop
         boolean passwordValid = false;
-        password =(JOptionPane.showInputDialog(null,"Enter your password" ));
-        while(passwordValid)
-        {
+        while(!passwordValid)
+        { password =(JOptionPane.showInputDialog(null,"Enter your password" ));
              if( ! lg.CheckPasswordComplexity(password))
             {
                 JOptionPane.showMessageDialog(null,"Password is not correctly formatted, please ensure that the passsword contains at least 8 characters, a capital letter, a number and a special character");
