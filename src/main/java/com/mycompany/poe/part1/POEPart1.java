@@ -80,13 +80,18 @@ public class POEPart1 {
         }
         
         
+
+       
         lg.registerUser();
         
         
         
         if(lg.LoginUser(username, password) == true) {
             JOptionPane.showMessageDialog(null,"You have been successfully logged in");
+        } else {
+            JOptionPane.showMessageDialog(null,"You have not been successfully logged in");
         }
+            
         
        
         
@@ -97,5 +102,7 @@ public class POEPart1 {
         JOptionPane.showMessageDialog(null, "Username or password incorrect, " +
         "please try again.");
         }
+        
+        
     }
 }
