@@ -91,7 +91,7 @@ public class POEPart1 {
        
         
         if(lg.returnLoginStatus().equals("Successfull login")) {
-           JOptionPane.showMessageDialog(null, "Welcome " + firstname + " " + lastname + 
+           JOptionPane.showMessageDialog(null, "Welcome " + firstname + " "+ lastname + 
         " it is great to see you again.");
         }else{
         JOptionPane.showMessageDialog(null, "Username or password incorrect, " +
