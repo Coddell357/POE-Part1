@@ -42,19 +42,20 @@ public class Login {
   
     public String registerUser() { 
         //Used 3 if statements to validate username, password and register the user if both are correctly formatted
-        if ( !CheckUsername(username) ) {
+        if ( CheckUsername(username) == false ) {
             return "Username is not correctly formatted, please ensure that your username contains"
                     + " an underscore and is no more than 5 characters in length." ;
         }
-        if ( !CheckPasswordComplexity(password) ) {
+        if ( CheckPasswordComplexity(password) == true ) {
             return "Password is not correctly formatted, please ensure that the passowrd contains at least"
                     + " 8 characters, a capital letter, a number and a special character.";
         } 
-        if (CheckUsername(username) && CheckPasswordComplexity(password)) {
+        if (CheckUsername(username) && CheckPasswordComplexity(password) == true) {
              return "You are now registered";
-        } return " You are not registered"; //statements is returned if both password and username are both incorrect
-            
+        } else{ return " You are not registered"; //statements is returned if both password and username are both incorrect
+        }
     }
+    
     
     public boolean LoginUser(String username, String password) { 
         

@@ -85,6 +85,49 @@ public class POEPart1 {
 
        // if password and username are the same and correctly given the the user is successfully registered
         lg.registerUser(); //calling registerUser() method from Login class
+                
+           JOptionPane.showMessageDialog(null,"You are now registered");
+           
+           //the user now has to login. We display this message to ensure they remeber their correct details to successfully login
+           JOptionPane.showMessageDialog(null,"Please click 'OK' to log into your account using the same"
+                   + " username and password from when you registered");
+           
+           
+           //USERNAME WHILE LOOP
+           
+           //if the username does not match then the user will be asked to enter their username again in the while loop
+           boolean loginUsername = false;
+           while(!loginUsername)
+               { username =(JOptionPane.showInputDialog(null,"Enter your username" ));
+        
+             if( ! lg.CheckUsername(username))
+            {    //if username does not match with the users registered details then system will output this message
+                JOptionPane.showMessageDialog(null,"Username is not correctly formatted, please ensure that your username contains"
+                 + " an underscore and is no more than 5 characters in length.");
+            }  
+            else
+            {
+                loginUsername = true;
+            }
+        }
+           
+        //PASSWORD WHILE LOOP
+        
+         //if the password does not match then the user will be asked to enter their username again in the while loop
+        boolean loginPassword = false;
+        while(!loginPassword) 
+        { password =(JOptionPane.showInputDialog(null,"Enter your password" ));
+             if( ! lg.CheckPasswordComplexity(password))
+            {
+                //if password does not match with the users registered details then system will output this message
+                JOptionPane.showMessageDialog(null,"Password is not correctly formatted, please ensure that the passsword contains"
+                 + " at least 8 characters, a capital letter, a number and a special character");
+            }  
+            else
+            {
+                loginPassword = true;
+            }
+        }
         
         
         //Checks if the userrname and password are correct so user can be successfully logged in and display that message
@@ -95,14 +138,16 @@ public class POEPart1 {
         }
             
         
-       
-        //if the user has successfully logged in then the Welcome message will be displayed along with their first and last name
-        //else they have to reguster and login again to recieve a welcome message
+        /* Farrel,J(2018)
+           The if/if else statements allows the program to make a decision given certain requirements and displays given messages from programmer
+           if else statement checks if the password and username are both correct for the login welcome message to be displayed
+        */
         if(lg.returnLoginStatus().equals("Successfull login")) {
            JOptionPane.showMessageDialog(null, "Welcome " + firstname + " "+ lastname + 
         " it is great to see you again.");
-        }else{
-        JOptionPane.showMessageDialog(null, "Username or password incorrect, " +
+        }else{ 
+        //else they have to register and login again to recieve a welcome message
+        JOptionPane.showMessageDialog(null, "Username or password incorrect, " +  
         "please try again.");
         }
         
