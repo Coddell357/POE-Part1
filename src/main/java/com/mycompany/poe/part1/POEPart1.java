@@ -14,7 +14,7 @@ public class POEPart1 {
 
     /*Pankaj(2022)
       Access Modifiers provide access control if they can be used by other classes or not according to their keyword
-      Public Keyword means it can be used in any class, it is a global vafriable
+      Public Keyword means it can be used in any class, it is a global variable
     */
     public static void main(String[] args) {
         //Declaring String variables that will be used in the main class
