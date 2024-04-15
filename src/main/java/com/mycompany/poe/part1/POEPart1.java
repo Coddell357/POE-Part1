@@ -18,8 +18,8 @@ public class POEPart1 {
     */
     public static void main(String[] args) {
         //Declaring String variables that will be used in the main class
-        String username;
-        String password;
+        String username = null; //initialized username
+        String password = null; //initialized password
         String firstname;
         String lastname;
         
@@ -34,40 +34,6 @@ public class POEPart1 {
         //prompt useer for input of lastname
         lastname = JOptionPane.showInputDialog(null, "Enter your lastname");
         
-         //prompted user for username input
-        username = JOptionPane.showInputDialog(null, "Enter your username"); 
-        lg.CheckUsername(username); //calling a method from Login class
-        
-        /* Farrel,J(2018)
-           The if/if else statements allows the program to make a decision given certain requirements and displays given messages from programmer
-           if else statements checks if the username is correctly formatted if not it will display appropriate message
-        */
-        if( lg.CheckUsername(username)== true) {
-            
-            /* Farrel,J(2018)
-               The Message Dialog field of JOptionPane displays a message to the user
-               The user will get a message according to if their username meets the username requirements or not
-            */
-            JOptionPane.showMessageDialog(null,"Username successfully captured");
-        }else {
-        JOptionPane.showMessageDialog(null, "Username is not correctly formatted, please ensure that your username contains an"
-          + " underscore and is no more than 5 characters in length."); //Error message that displays if username is incorrectly formatted
-        }
-        
-        
-        //prompted user for password input
-        password = JOptionPane.showInputDialog(null, "Enter your password");
-        lg.CheckPasswordComplexity(password); //calling a method from Login class
-        
-        //Checking if password input from user is formatted correctly or not thus a messahge will be displayed
-        if(lg.CheckPasswordComplexity(password) == true) {
-        JOptionPane.showMessageDialog(null, "Password successfully captured");
-        }else {
-        JOptionPane.showMessageDialog(null, "Password is not correctly formatted, please ensure that the passowrd contains at least"
-         + " 8 characters, a capital letter, a number and a special character."); //Error message that displays if password is incorrectly formatted
-        }
-        
-        
         
         //Username While Loop
         
@@ -75,6 +41,7 @@ public class POEPart1 {
            Boolean is a data type that results in true or false only
            We are chacking if the username is valid or not in order for the user to be registered 
         */
+        
         boolean usernameValid = false;
         
         /* Gravelle,R(2023)
