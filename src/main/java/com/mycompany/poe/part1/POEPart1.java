@@ -51,7 +51,7 @@ public class POEPart1 {
             JOptionPane.showMessageDialog(null,"Username successfully captured");
         }else {
         JOptionPane.showMessageDialog(null, "Username is not correctly formatted, please ensure that your username contains an"
-          + " underscore and is no more than 5 characters in length.");
+          + " underscore and is no more than 5 characters in length."); //Error message that displays if username is incorrectly formatted
         }
         
         
@@ -64,7 +64,7 @@ public class POEPart1 {
         JOptionPane.showMessageDialog(null, "Password successfully captured");
         }else {
         JOptionPane.showMessageDialog(null, "Password is not correctly formatted, please ensure that the passowrd contains at least"
-         + " 8 characters, a capital letter, a number and a special character.");
+         + " 8 characters, a capital letter, a number and a special character."); //Error message that displays if password is incorrectly formatted
         }
         
         
@@ -124,7 +124,7 @@ public class POEPart1 {
         if(lg.LoginUser(username, password) == true) {
             JOptionPane.showMessageDialog(null,"You have been successfully logged in");
         } else {
-            JOptionPane.showMessageDialog(null,"You have not been successfully logged in");
+            JOptionPane.showMessageDialog(null,"You have not been successfully logged in"); //errror message that occurs if both password and username are incorrect
         }
             
         
@@ -147,8 +147,8 @@ public class POEPart1 {
 
 Anonymous. 2021. Boolean Keyword in Java. (Version 1.0-SNAPSHOT) [Source code]. https://www.javatpoint.com/boolean-keyword-in-java (Accessed 1 April 2024)
 Anonymous. 2023. Java Stringformat() Method with Examples. (Version 1.0-SNAPSHOT) [Source code]. https://www.geeksforgeeks.org/java-string-format-method-with-examples/ (Accessed 1 April 2024)
-Baeldung  Michal,A. Java Check a String for Lowercase/Uppercase Letter, Special Character and Digit. (Version 1.0-SNAPSHOT) [Source code]. https://www.baeldung.com/java-lowercase-uppercase-special-character-digit-regex (Accessed 11 April 2024)
-Farrell, J. 2018. Java Programming
+Baeldung and Michal,A. Java Check a String for Lowercase/Uppercase Letter, Special Character and Digit. (Version 1.0-SNAPSHOT) [Source code]. https://www.baeldung.com/java-lowercase-uppercase-special-character-digit-regex (Accessed 11 April 2024)
+Farrell, J. 2018. Java Programming. 9th ed. Boston;Cengage
 Gravelle, R. 2023. Java WHILE and DO WHILE Loops. (Version 1.0-SNAPSHOT) [Source code]. https://www.developer.com/java/java-while-loops/ (Accessed 10 April 2024)
 IIEVC School of Computer Science.2022. Basic Unit Testing example. (Version 1.0-SNAPSHOT) [Source Code]. https://youtu.be/2UxaA00H3og?si=Pb5TxsUsqDd7Ev5m (Accessed 7 April 2024)
 John. 2021. Equals() vs == in Java-The Real Difference.(Version 1.0-SNAPSHOT) [Source code]. https://youtu.be/AoUVdLWFQw?si=tAhlCgHOCZ1m2rxH (Accessed 9 April 2024)

@@ -28,7 +28,7 @@ public class Login {
     
     public boolean CheckPasswordComplexity(String password) {  
         this.password = password; //instance variable = parameter passed to constructor
-        /* Baeldung,M.A(2024)
+        /* Baeldung and Michal,A(2024)
            Provides us with proper lengths and matches for our passwird fro  the user to contain thus checking the String password
            password input from user will be required to have an uppercase & lowercase letter, digit,special character and at least 8 characters
         */
@@ -52,7 +52,7 @@ public class Login {
         } 
         if (CheckUsername(username) && CheckPasswordComplexity(password)) {
              return "You are now registered";
-        } return " You are not registered";
+        } return " You are not registered"; //statements is returned if both password and username are both incorrect
             
     }
     
